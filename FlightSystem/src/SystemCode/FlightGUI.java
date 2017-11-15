@@ -73,14 +73,16 @@ public class FlightGUI {
 		
 		JComboBox comboBox = new JComboBox();
 		comboBox.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		comboBox.setForeground(Color.LIGHT_GRAY);
-		comboBox.setBackground(Color.LIGHT_GRAY);
+		comboBox.setForeground(Color.BLACK);
+		comboBox.setBackground(Color.WHITE);
 		comboBox.setModel(new DefaultComboBoxModel(new String[] {"", "Dublin", "New York", "Sidney", "Amsterdam", "Nairobi"}));
 		comboBox.setToolTipText("Choose your destination");
 		comboBox.setBounds(196, 67, 149, 23);
 		frame.getContentPane().add(comboBox);
 		
 		JComboBox comboBox_1 = new JComboBox();
+		comboBox_1.setForeground(Color.BLACK);
+		comboBox_1.setBackground(Color.WHITE);
 		comboBox_1.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		comboBox_1.setModel(new DefaultComboBoxModel(new String[] {"", "Business", "Personal"}));
 		comboBox_1.setToolTipText("Choose your class");
