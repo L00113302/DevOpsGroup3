@@ -101,7 +101,7 @@ public class FlightGUI {
 		btnNewButton.setBounds(122, 216, 176, 23);
 		frame.getContentPane().add(btnNewButton);
 		
-		JLabel lblNewLabel = new JLabel("            LYIT Airways");
+		JLabel lblNewLabel = new JLabel("          LYIT Airways");
 		lblNewLabel.setForeground(Color.RED);
 		lblNewLabel.setBackground(Color.YELLOW);
 		lblNewLabel.setFont(new Font("Sitka Text", Font.BOLD | Font.ITALIC, 28));
