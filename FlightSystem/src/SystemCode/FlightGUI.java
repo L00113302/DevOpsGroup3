@@ -97,14 +97,14 @@ public class FlightGUI {
 		
 		JButton btnNewButton = new JButton("Proceed To Checkout");
 		btnNewButton.setToolTipText("Proceed to payment");
-		btnNewButton.setBackground(Color.RED);
+		btnNewButton.setBackground(Color.LIGHT_GRAY);
 		btnNewButton.setBounds(122, 216, 176, 23);
 		frame.getContentPane().add(btnNewButton);
 		
-		JLabel lblNewLabel = new JLabel("          LYIT Airways");
+		JLabel lblNewLabel = new JLabel("          G3 Airways");
 		lblNewLabel.setForeground(Color.RED);
 		lblNewLabel.setBackground(Color.YELLOW);
-		lblNewLabel.setFont(new Font("Sitka Text", Font.BOLD | Font.ITALIC, 28));
+		lblNewLabel.setFont(new Font("Segoe UI Black", Font.BOLD | Font.ITALIC, 30));
 		lblNewLabel.setBounds(31, 11, 374, 44);
 		frame.getContentPane().add(lblNewLabel);
 	}
