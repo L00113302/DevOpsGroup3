@@ -1,8 +1,9 @@
 package SystemCode;
 /**
- * Database handler
+ * DatabaseHandler
  *
- * @author Mark Glenn
+ * @author 		Mark Glenn
+ * L00113302 	Cloud
  */
 
 import javax.swing.*;

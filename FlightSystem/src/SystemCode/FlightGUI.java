@@ -1,5 +1,10 @@
 package SystemCode;
-
+/**
+ * Main Menu
+ *
+ * @author 		Mark Glenn
+ * L00113302 	Cloud
+ */
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
