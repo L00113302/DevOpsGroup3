@@ -7,13 +7,21 @@ package SystemCode;
  */
 
 import javax.swing.*;
-import java.awt.event.*;
+//import java.awt.event.*;
 import java.awt.BorderLayout;
 import java.awt.Color;
-import java.util.*;
+//import java.util.*;
+//import java.awt.*;
+//import java.awt.GridLayout;
+//import java.awt.event.ActionEvent;
+//import java.awt.event.ActionListener;
 
-public class LogInMenu extends JFrame implements ActionListener
+public class LogInMenu extends JFrame
 {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	//Variable Declaration
 	JPanel jpLogin;
 	//JButton jbtnBack;
@@ -55,40 +63,45 @@ public class LogInMenu extends JFrame implements ActionListener
 		
 		//Add buttons to ActionListener
 		//jbtnBack.addActionListener(this);
-		jbtnLogin.addActionListener(this);
+		//jbtnLogin.addActionListener(this);
+	
+	
+	jbtnLogin.addActionListener(new java.awt.event.ActionListener() {
+		@SuppressWarnings("deprecation")
+		public void actionPerformed(java.awt.event.ActionEvent evt) {
+			try {
+				if(jtfUsername.getText().equals("root") && jtfPassword.getText().equals("password"))
+				{
+				//Opens MainMenu
+					FlightGUI window = new FlightGUI();
+					window.frame.setVisible(true);
+					dispose();
+				//DatabaseHandler dbh = new DatabaseHandler();
+				//dbh.connectToDatabase();
+				// close database connection
+				//dbh.rs.close();
+				//dbh.conn.close();
+				}
+				//incorrect Login
+			else
+			{
+				jlblHiddenErrorMsg.setText("Invalid username or password");
+				jlblHiddenErrorMsg.setForeground(Color.RED);
+			}
+			} catch (Exception ex) {
+				JOptionPane.showMessageDialog(null, ex.getMessage());
+			}
+			
+		}
+			
+	});
 	}
 	
 	/**
 	 * @param ActionEvent when on of the buttons is pressed
 	 *
 	 */
-	public void actionPerformed(ActionEvent e) 
-	{
-		if(e.getSource()==jbtnLogin) 
-		{
-			//if correct Login
-			if(jtfUsername.getText().equals("root") && jtfPassword.getText().equals("password"))
-			//***!!! MUST change to valid admin login from MySQL Database.!!!***
-			{
-				//closes LogIn
-				dispose();
-				System.out.println("Test");
-				
-				//Opens MainMenu
-				JFrame frame = new RegisterMenu();	//change to MainMenu();
-				frame.setVisible(true);
-				frame.setSize(220,400);
-			}
-			
-			//incorrect Login
-			else
-			{
-				jlblHiddenErrorMsg.setText("Invalid username or password");
-				jlblHiddenErrorMsg.setForeground(Color.RED);
-			}
-				
-		}
-	}
+	
 	
 	public static void main(String[] args) 
 	{

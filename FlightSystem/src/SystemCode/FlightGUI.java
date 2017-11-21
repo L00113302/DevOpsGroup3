@@ -5,6 +5,9 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import java.awt.GridLayout;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.Font;
 import javax.swing.JComboBox;
 import javax.swing.JTextField;
@@ -14,9 +17,10 @@ import javax.swing.DefaultComboBoxModel;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 
+
 public class FlightGUI {
 
-	private JFrame frame;
+	public JFrame frame;
 	private JTextField textField;
 
 	/**
@@ -40,6 +44,7 @@ public class FlightGUI {
 	 */
 	public FlightGUI() {
 		initialize();
+		
 	}
 
 	/**
@@ -101,11 +106,32 @@ public class FlightGUI {
 		btnNewButton.setBounds(122, 216, 176, 23);
 		frame.getContentPane().add(btnNewButton);
 		
+		btnNewButton.addActionListener(new java.awt.event.ActionListener() {
+			public void actionPerformed(java.awt.event.ActionEvent evt) {
+				try {
+					
+					DatabaseHandler dbh = new DatabaseHandler();
+					dbh.connectToDatabase();
+					
+
+					// close database connection
+					dbh.rs.close();
+					dbh.conn.close();
+					
+				} catch (Exception ex) {
+					JOptionPane.showMessageDialog(null, ex.getMessage());
+				}
+
+			}
+		});
+		
 		JLabel lblNewLabel = new JLabel("          G3 Airways");
 		lblNewLabel.setForeground(Color.RED);
 		lblNewLabel.setBackground(Color.YELLOW);
 		lblNewLabel.setFont(new Font("Segoe UI Black", Font.BOLD | Font.ITALIC, 30));
 		lblNewLabel.setBounds(31, 11, 374, 44);
 		frame.getContentPane().add(lblNewLabel);
+		
+		
 	}
 }

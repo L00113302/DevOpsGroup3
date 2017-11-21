@@ -5,6 +5,8 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import java.awt.FlowLayout;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
 import java.awt.Font;
 import javax.swing.JPanel;
 import java.awt.BorderLayout;
@@ -49,7 +51,7 @@ public class HomeScreen {
 		frmGAirways = new JFrame();
 		frmGAirways.setTitle("HOME");
 		frmGAirways.setBounds(100, 100, 569, 407);
-		frmGAirways.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		//frmGAirways.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frmGAirways.getContentPane().setLayout(null);
 		
 		JLabel lblGAirways = new JLabel(" G3 Airways");
@@ -68,10 +70,51 @@ public class HomeScreen {
 		btnLogIn.setBackground(Color.LIGHT_GRAY);
 		panel.add(btnLogIn);
 		
+		btnLogIn.addActionListener(new java.awt.event.ActionListener() {
+			public void actionPerformed(java.awt.event.ActionEvent evt) {
+				try {
+					
+					//Opens MainMenu
+					JFrame frame = new LogInMenu();	//change to MainMenu();
+					frame.setVisible(true);
+					frame.setSize(220,220);
+					//DatabaseHandler dbh = new DatabaseHandler();
+					//dbh.connectToDatabase();
+					// close database connection
+					//dbh.rs.close();
+					//dbh.conn.close();
+				} catch (Exception ex) {
+					JOptionPane.showMessageDialog(null, ex.getMessage());
+				}
+				
+			}
+				
+		});
+		
 		JButton btnRegister = new JButton("Register");
 		btnRegister.setFont(new Font("Segoe UI Black", Font.BOLD, 30));
 		btnRegister.setBackground(Color.LIGHT_GRAY);
 		panel.add(btnRegister);
+		
+		btnRegister.addActionListener(new java.awt.event.ActionListener() {
+			public void actionPerformed(java.awt.event.ActionEvent evt) {
+				try {
+					
+					//Opens MainMenu
+					JFrame frame = new RegisterMenu();	//change to MainMenu();
+					frame.setVisible(true);
+					frame.setSize(220,400);
+					//DatabaseHandler dbh = new DatabaseHandler();
+					//dbh.connectToDatabase();
+					// close database connection
+					//dbh.rs.close();
+					//dbh.conn.close();
+				} catch (Exception ex) {
+					JOptionPane.showMessageDialog(null, ex.getMessage());
+				}
+
+			}
+		});
 		
 		JLabel label = new JLabel("");
 		label.setBounds(103, 82, 46, 14);
@@ -82,4 +125,5 @@ public class HomeScreen {
 		lblNewLabel.setBounds(-10, 0, 569, 322);
 		frmGAirways.getContentPane().add(lblNewLabel);
 	}
+	
 }

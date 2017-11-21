@@ -17,7 +17,7 @@ public class DatabaseHandler extends javax.swing.JFrame {
 	// credentials for database including AWS RDS database endpoint and JDBC
 	// driver
 	final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
-	final String DB_URL = " devops.clql55s9fxrz.eu-west-1.rds.amazonaws.com";
+	final String DB_URL = "jdbc:mysql://devops.clql55s9fxrz.eu-west-1.rds.amazonaws.com";
 	final String USER_NAME = "DevOps";
 	final String PASSWORD = "groupthree";
 

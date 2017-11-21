@@ -6,7 +6,7 @@ package SystemCode;
  */
 
 import javax.swing.*;
-
+import javax.swing.event.*;
 import java.awt.BorderLayout;
 import java.util.*;
 
@@ -46,6 +46,8 @@ public class RegisterMenu extends JFrame {
 		jlblReenterPassword = new JLabel("Re-Enter Password:");
 		jtfReenterPassword = new JTextField(15);
 		jbtnRegister = new JButton("Register");
+		
+		
 
 		//GridLayout newGridLayout = new GridLayout(3,3); 
 		jpRegister.add(jlblFname);
@@ -66,6 +68,7 @@ public class RegisterMenu extends JFrame {
 		
 		this.add(jpRegister, BorderLayout.CENTER);
 	}
+	
 	
 	public static void main(String[] args) 
 	{
