@@ -23,64 +23,57 @@ public class Client {
 		
 	}
 	
-     
-
-
-   //Methods
-   
-	     public int getfname() {
-	        return fname;
-	    }
-	   
-	    public void setfname(String fname) {
-	        this.fname = fname;
-	    }
-
-	    public String getlname() {
-	        return lname;
-	    }
-
-	    public void setlname(String lname) {
-	        this.lname = lname;
-	    }
-
-	    public Calendar getDOB() {
-	        return DOB;
-	    }
-
-	    public void setDOB(Calendar DOB) {
-	        this.DOB = DOB;
-	    }
-	
-	    public void setDOB(Calendar DOB) {
-	        this.DOB = DOB;
-	    }
-	    
-	    public String getTelNo() {
-	        return telNo;
-	    }
-
-	    public void setTelNo(int telNo) {
-	        this.telNo = telNo;
-	    }
-
-	
-    	    public int selectFlight() {
-     
-
-           }
 
      
 
-           public String selectClass() {
+           public String getFname() {
+				return fname;
+			}
 
-         }
 
-     
+			public void setFname(String fname) {
+				this.fname = fname;
+			}
 
-          public int viewCost(){
-             return cost;  
-    }
+
+			public String getLname() {
+				return lname;
+			}
+
+
+			public void setLname(String lname) {
+				this.lname = lname;
+			}
+
+
+			public String getAddress() {
+				return address;
+			}
+
+
+			public void setAddress(String address) {
+				this.address = address;
+			}
+
+
+			public Calendar getDOB() {
+				return DOB;
+			}
+
+
+			public void setDOB(Calendar dOB) {
+				DOB = dOB;
+			}
+
+
+			public int getTelNo() {
+				return telNo;
+			}
+
+
+			public void setTelNo(int telNo) {
+				this.telNo = telNo;
+			}
 
 
     
@@ -94,6 +87,6 @@ public class Client {
                 '}';
 
  
-
+    }
 }
 
