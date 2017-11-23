@@ -28,10 +28,9 @@ public class Client {
 
    //Methods
    
-	 	public int getfname() {
+	     public int getfname() {
 	        return fname;
 	    }
-
 	   
 	    public void setfname(String fname) {
 	        this.fname = fname;
@@ -53,11 +52,9 @@ public class Client {
 	        this.DOB = DOB;
 	    }
 	
-	
 	    public void setDOB(Calendar DOB) {
 	        this.DOB = DOB;
 	    }
-	    
 	    
 	    public String getTelNo() {
 	        return telNo;
@@ -68,26 +65,21 @@ public class Client {
 	    }
 
 	
-    public int selectFlight() {
+    	    public int selectFlight() {
+     
 
-        
-
-    }
+           }
 
      
 
-    public String selectClass() {
+           public String selectClass() {
 
-      
-
-    }
+         }
 
      
 
-    public int viewCost(){
-    
-    return cost;
-    
+          public int viewCost(){
+             return cost;  
     }
 
 
