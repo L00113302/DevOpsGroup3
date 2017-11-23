@@ -8,25 +8,27 @@ package SystemCode;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
-import java.awt.GridLayout;
+//import java.awt.GridLayout;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+//import java.awt.event.ActionEvent;
+//import java.awt.event.ActionListener;
 import java.awt.Font;
 import javax.swing.JComboBox;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.Color;
 import javax.swing.DefaultComboBoxModel;
-import javax.swing.JPanel;
-import javax.swing.JTextArea;
+//import javax.swing.JPanel;
+//import javax.swing.JTextArea;
 
 
 public class FlightGUI {
 
 	public JFrame frame;
-	private JTextField textField;
+	public static JTextField textField;
+	public static JComboBox comboBox;
+	public static JComboBox comboBox_1;
 
 	/**
 	 * Launch the application.
@@ -42,6 +44,8 @@ public class FlightGUI {
 				}
 			}
 		});
+		
+		
 	}
 
 	/**
@@ -55,6 +59,7 @@ public class FlightGUI {
 	/**
 	 * Initialize the contents of the frame.
 	 */
+	@SuppressWarnings({ "rawtypes", "unchecked" })
 	private void initialize() {
 		frame = new JFrame();
 		frame.getContentPane().setBackground(Color.GREEN);
@@ -81,7 +86,8 @@ public class FlightGUI {
 		lblTotalCost.setBounds(31, 171, 149, 23);
 		frame.getContentPane().add(lblTotalCost);
 		
-		JComboBox comboBox = new JComboBox();
+		
+		comboBox = new JComboBox();
 		comboBox.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		comboBox.setForeground(Color.BLACK);
 		comboBox.setBackground(Color.WHITE);
@@ -90,7 +96,7 @@ public class FlightGUI {
 		comboBox.setBounds(196, 67, 149, 23);
 		frame.getContentPane().add(comboBox);
 		
-		JComboBox comboBox_1 = new JComboBox();
+		comboBox_1 = new JComboBox();
 		comboBox_1.setForeground(Color.BLACK);
 		comboBox_1.setBackground(Color.WHITE);
 		comboBox_1.setFont(new Font("Tahoma", Font.PLAIN, 14));
@@ -104,6 +110,34 @@ public class FlightGUI {
 		textField.setBounds(196, 172, 149, 23);
 		frame.getContentPane().add(textField);
 		textField.setColumns(10);
+		//textField.setText("come on");
+		//textField.calculateFlightCost();
+		comboBox.addActionListener(new java.awt.event.ActionListener() {
+			public void actionPerformed(java.awt.event.ActionEvent evt) {
+				try {
+					
+					Flight.calculateFlightCost();
+					
+				} catch (Exception ex) {
+					JOptionPane.showMessageDialog(null, ex.getMessage());
+				}
+
+			}
+		});
+		
+		
+		comboBox_1.addActionListener(new java.awt.event.ActionListener() {
+			public void actionPerformed(java.awt.event.ActionEvent evt) {
+				try {
+					
+					Flight.calculateFlightCost();
+					
+				} catch (Exception ex) {
+					JOptionPane.showMessageDialog(null, ex.getMessage());
+				}
+
+			}
+		});
 		
 		JButton btnNewButton = new JButton("Proceed To Checkout");
 		btnNewButton.setToolTipText("Proceed to payment");
@@ -117,9 +151,18 @@ public class FlightGUI {
 					
 					DatabaseHandler dbh = new DatabaseHandler();
 					dbh.connectToDatabase();
+					dbh.stmt = dbh.conn.createStatement();
 					
+					String insertQuery = ("INSERT INTO DevOps.Flight(Destination, Class, Cost) values ('"
+							 + comboBox.getSelectedItem() + "','"
+							+ comboBox_1.getSelectedItem() + "','" +textField.getText()+ "')");
 
-					// close database connection
+							
+					dbh.stmt.executeQuery("USE DevOps");
+					dbh.stmt.execute(insertQuery);
+					
+					JOptionPane.showMessageDialog(null, "Query Executed");
+					// close connection
 					dbh.rs.close();
 					dbh.conn.close();
 					
@@ -139,4 +182,5 @@ public class FlightGUI {
 		
 		
 	}
+	
 }
