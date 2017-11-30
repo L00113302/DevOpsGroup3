@@ -21,7 +21,7 @@ public class PassportNoGUI {
 			public void run() {
 				try {
 					PassportNoGUI window = new PassportNoGUI();
-					window.frame.setVisible(true);
+					window.getFrame().setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -40,22 +40,30 @@ public class PassportNoGUI {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
-		frame = new JFrame();
-		frame.setBounds(100, 100, 329, 211);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.getContentPane().setLayout(null);
+		setFrame(new JFrame());
+		getFrame().setBounds(100, 100, 329, 211);
+		getFrame().setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		getFrame().getContentPane().setLayout(null);
 		
 		textField = new JTextField();
 		textField.setBounds(66, 67, 172, 20);
-		frame.getContentPane().add(textField);
+		getFrame().getContentPane().add(textField);
 		textField.setColumns(10);
 		
 		JLabel lblPleaseEnterYour = new JLabel("Please Enter Your Passport Number");
 		lblPleaseEnterYour.setBounds(66, 28, 234, 14);
-		frame.getContentPane().add(lblPleaseEnterYour);
+		getFrame().getContentPane().add(lblPleaseEnterYour);
 		
 		JButton btnNewButton = new JButton("OK");
 		btnNewButton.setBounds(68, 123, 172, 23);
-		frame.getContentPane().add(btnNewButton);
+		getFrame().getContentPane().add(btnNewButton);
+	}
+
+	public JFrame getFrame() {
+		return frame;
+	}
+
+	public void setFrame(JFrame frame) {
+		this.frame = frame;
 	}
 }

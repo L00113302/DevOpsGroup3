@@ -1,6 +1,5 @@
 package SystemCode;
-/**
- * Log in Menu
+/** * Log in Menu
  *
  * @author 		Christopher Doherty
  * L00119571 	Applied Computing

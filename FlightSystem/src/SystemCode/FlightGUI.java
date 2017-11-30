@@ -14,6 +14,8 @@ import javax.swing.JOptionPane;
 //import java.awt.event.ActionEvent;
 //import java.awt.event.ActionListener;
 import java.awt.Font;
+import java.awt.Window;
+
 import javax.swing.JComboBox;
 import javax.swing.JTextField;
 import javax.swing.JButton;
@@ -145,10 +147,13 @@ public class FlightGUI {
 		btnNewButton.setBounds(122, 216, 176, 23);
 		frame.getContentPane().add(btnNewButton);
 		
+		
 		btnNewButton.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
 				try {
-					
+					//Opens window
+					PassportNoGUI window = new PassportNoGUI();
+					window.getFrame().setVisible(true);
 					DatabaseHandler dbh = new DatabaseHandler();
 					dbh.connectToDatabase();
 					dbh.stmt = dbh.conn.createStatement();
@@ -166,12 +171,15 @@ public class FlightGUI {
 					dbh.rs.close();
 					dbh.conn.close();
 					
+					
+					
 				} catch (Exception ex) {
 					JOptionPane.showMessageDialog(null, ex.getMessage());
 				}
 
 			}
 		});
+		
 		
 		JLabel lblNewLabel = new JLabel("          G3 Airways");
 		lblNewLabel.setForeground(Color.RED);
