@@ -62,7 +62,7 @@ public class FlightGUI {
 	@SuppressWarnings({ "rawtypes", "unchecked" })
 	private void initialize() {
 		frame = new JFrame();
-		frame.getContentPane().setBackground(Color.GREEN);
+		frame.getContentPane().setBackground(Color.LIGHT_GRAY);
 		frame.getContentPane().setForeground(Color.LIGHT_GRAY);
 		frame.setBounds(100, 100, 450, 300);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
