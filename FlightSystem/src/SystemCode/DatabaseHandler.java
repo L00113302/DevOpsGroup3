@@ -17,6 +17,9 @@ import java.sql.Statement;
 public class DatabaseHandler extends javax.swing.JFrame {
 	// credentials for database including AWS RDS database endpoint and JDBC
 	// driver
+	/**
+	 * Access details for database
+	 */
 	final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
 	final String DB_URL = "jdbc:mysql://devops.clql55s9fxrz.eu-west-1.rds.amazonaws.com";
 	final String USER_NAME = "DevOps";
@@ -26,7 +29,10 @@ public class DatabaseHandler extends javax.swing.JFrame {
 	Statement stmt = null;
 	ResultSet rs = null;
 
-	// connect to database
+	/**
+	 * Connect to database
+	 *
+	 */
 	public void connectToDatabase() {
 		try {
 			// STEP 1 - Load the JDBC driver
@@ -50,7 +56,11 @@ public class DatabaseHandler extends javax.swing.JFrame {
 
 	}
 
-	// connect and do query
+	/**
+	 * Create query 
+	 * @param query
+	 * database query
+	 */
 	public void doQuery(String query) {
 
 		try {

@@ -1,9 +1,11 @@
 package SystemCode;
-
+/**
+ * @author Mark Glenn
+ * 
+ * L00113302 Cloud
+ */
 import java.awt.EventQueue;
-
 import javax.swing.JFrame;
-import java.awt.FlowLayout;
 import javax.swing.JTextField;
 import javax.swing.JLabel;
 import javax.swing.JButton;
@@ -15,6 +17,7 @@ public class PassportNoGUI {
 
 	/**
 	 * Launch the application.
+	 * @param args
 	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
@@ -58,11 +61,17 @@ public class PassportNoGUI {
 		btnNewButton.setBounds(68, 123, 172, 23);
 		getFrame().getContentPane().add(btnNewButton);
 	}
-
+	/**
+	 * Get frame
+	 * @return frame
+	 */
 	public JFrame getFrame() {
 		return frame;
 	}
-
+	/**
+	 * set frame
+	 * @param frame
+	 */
 	public void setFrame(JFrame frame) {
 		this.frame = frame;
 	}

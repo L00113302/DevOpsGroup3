@@ -5,16 +5,13 @@ package SystemCode;
  * @author Christopher Doherty
  */
 
-import javax.swing.*;
-
-import java.awt.BorderLayout;
-import java.util.*;
 
 public class LogInTester {
-
-	
-	public static void main(String[] args) 
-	{
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		@SuppressWarnings("unused")
 		LogInMenu logInTest = new LogInMenu();
 	}
 }

@@ -6,10 +6,11 @@ package SystemCode;
  */
 
 import javax.swing.*;
-import javax.swing.event.*;
 import java.awt.BorderLayout;
-import java.util.*;
-
+/**
+ * Create components
+ */
+@SuppressWarnings("serial")
 public class RegisterMenu extends JFrame {
 	JPanel jpRegister;
 	JButton jbtnRegister;
@@ -27,29 +28,27 @@ public class RegisterMenu extends JFrame {
 	JTextField jtfUsername;
 	JTextField jtfPassword;
 	JTextField jtfReenterPassword;
-	
-	public RegisterMenu()
-	{
+	/**
+	 * Initialise Components
+	 */
+	public RegisterMenu() {
 		jpRegister = new JPanel();
-		jlblFname =  new JLabel("First Name:");
+		jlblFname = new JLabel("First Name:");
 		jtfFname = new JTextField(15);
-		jlblLname =  new JLabel("Last Name:");
+		jlblLname = new JLabel("Last Name:");
 		jtfLname = new JTextField(15);
-		jlblCountry =  new JLabel("Country:");
+		jlblCountry = new JLabel("Country:");
 		jtfCountry = new JTextField(15);
-		jlblEmail =  new JLabel("Email:");
+		jlblEmail = new JLabel("Email:");
 		jtfEmail = new JTextField(15);
-		jlblUsername =  new JLabel("Username:");
+		jlblUsername = new JLabel("Username:");
 		jtfUsername = new JTextField(15);
 		jlblPassword = new JLabel("Password:");
 		jtfPassword = new JTextField(15);
 		jlblReenterPassword = new JLabel("Re-Enter Password:");
 		jtfReenterPassword = new JTextField(15);
 		jbtnRegister = new JButton("Register");
-		
-		
 
-		//GridLayout newGridLayout = new GridLayout(3,3); 
 		jpRegister.add(jlblFname);
 		jpRegister.add(jtfFname);
 		jpRegister.add(jlblLname);
@@ -61,23 +60,26 @@ public class RegisterMenu extends JFrame {
 		jpRegister.add(jlblUsername);
 		jpRegister.add(jtfUsername);
 		jpRegister.add(jlblPassword);
-		jpRegister.add(jtfPassword);	
+		jpRegister.add(jtfPassword);
 		jpRegister.add(jlblReenterPassword);
 		jpRegister.add(jtfReenterPassword);
-		jpRegister.add(jbtnRegister);		
-		
+		jpRegister.add(jbtnRegister);
+
 		this.add(jpRegister, BorderLayout.CENTER);
 	}
-	
-	
-	public static void main(String[] args) 
-	{
+
+	/**
+	 * Launch the application window.
+	 * 
+	 * @param args
+	 */
+	public static void main(String[] args) {
 		RegisterMenu frame = new RegisterMenu();
-      frame.setTitle("Register");
-      frame.setSize(220,400);
-      frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-      frame.setLocationRelativeTo(null);
-      frame.setVisible(true);
+		frame.setTitle("Register");
+		frame.setSize(220, 400);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setLocationRelativeTo(null);
+		frame.setVisible(true);
 	}
-	
+
 }
