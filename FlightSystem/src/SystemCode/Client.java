@@ -21,8 +21,12 @@ public class Client {
 	/**
 	 * Constructor
 	 * 
-	 * @param first name, last name, address
-	 * dob, telno
+	 * @param fname first name
+	 * @param lname last name
+	 * @param address address
+	 * @param dob date of birth
+	 * @param telNo telephone number
+	 * customer details
 	 */
 	public Client(String fname, String lname, String address, Calendar dob, int telNo) {
 
@@ -41,9 +45,9 @@ public class Client {
 	public String getFname() {
 		return fname;
 	}
-	/**
+	/**	
+	 * @param fname
 	 * set first name
-	 * @param first name
 	 */
 	public void setFname(String fname) {
 		this.fname = fname;
@@ -56,8 +60,8 @@ public class Client {
 		return lname;
 	}
 	/**
+	 * @param lname
 	 * Set last name
-	 * @param last name
 	 */
 	public void setLname(String lname) {
 		this.lname = lname;
@@ -70,8 +74,8 @@ public class Client {
 		return address;
 	}
 	/**
-	 * Set Address
 	 * @param address
+	 * Set Address
 	 */
 	public void setAddress(String address) {
 		this.address = address;
@@ -84,8 +88,8 @@ public class Client {
 		return DOB;
 	}
 	/**
+	 * @param dOB
 	 * Set Date of birth
-	 * @param dob
 	 */
 	public void setDOB(Calendar dOB) {
 		DOB = dOB;
@@ -98,8 +102,8 @@ public class Client {
 		return telNo;
 	}
 	/**
+	 * @param telNo
 	 * set tel no
-	 * @param tel no
 	 */
 	public void setTelNo(int telNo) {
 		this.telNo = telNo;

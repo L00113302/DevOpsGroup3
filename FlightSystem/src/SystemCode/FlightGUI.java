@@ -27,9 +27,8 @@ public class FlightGUI {
 	public static JComboBox comboBox_1;
 
 	/**
-	 * Launch the application.
-	 * 
 	 * @param args
+	 * Launch the application.
 	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {

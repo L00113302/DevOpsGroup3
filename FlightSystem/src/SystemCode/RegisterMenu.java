@@ -69,9 +69,8 @@ public class RegisterMenu extends JFrame {
 	}
 
 	/**
-	 * Launch the application window.
-	 * 
 	 * @param args
+	 *  * Launch the application window.
 	 */
 	public static void main(String[] args) {
 		RegisterMenu frame = new RegisterMenu();

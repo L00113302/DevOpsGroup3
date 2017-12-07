@@ -9,6 +9,7 @@ package SystemCode;
 public class LogInTester {
 	/**
 	 * @param args
+	 * Launch Log in
 	 */
 	public static void main(String[] args) {
 		@SuppressWarnings("unused")

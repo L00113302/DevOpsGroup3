@@ -51,15 +51,13 @@ public class DatabaseHandler extends javax.swing.JFrame {
 			//JOptionPane.showMessageDialog(null,"Could not load driver.\n" + e.getMessage());
 		} catch (SQLException e) {
 			System.out.print("Connection Error");
-			//JOptionPane.showMessageDialog(null,"Problem with SQL.\n" + e.getMessage());
 		}
 
 	}
 
 	/**
-	 * Create query 
-	 * @param query
-	 * database query
+	 * @param query 
+	 * create database query
 	 */
 	public void doQuery(String query) {
 

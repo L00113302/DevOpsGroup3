@@ -24,7 +24,8 @@ public class Flight {
 
 	/**
 	 * Constructor
-	 * @param destination, class
+	 * @param flightDest destination 
+	 * @param flightClass class
 	 */
 	public Flight(String flightDest, String flightClass) {
 
@@ -39,9 +40,8 @@ public class Flight {
 	public String getFlightDest() {
 		return flightDest;
 	}
-	/**
-	 * Set Flight
-	 * @param destination
+	/** 
+	 * @param flightDest Set Flight
 	 */
 	public void setFlightDest(String flightDest) {
 		this.flightDest = flightDest;
@@ -55,8 +55,8 @@ public class Flight {
 		return flightClass;
 	}
 	/**
+	 * @param flightClass 
 	 * Set Flight Class
-	 * @param class
 	 */
 	public void setFlightClass(String flightClass) {
 		this.flightClass = flightClass;
@@ -65,7 +65,7 @@ public class Flight {
 	/**
 	 * Calculate Cost of Flight
 	 * 
-	 * @return flight cost
+	 * 
 	 */
 	public static void calculateFlightCost() {
 		if (FlightGUI.comboBox.getSelectedItem().equals("Dublin")

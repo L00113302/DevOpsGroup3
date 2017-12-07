@@ -16,8 +16,8 @@ public class PassportNoGUI {
 	private JTextField textField;
 
 	/**
-	 * Launch the application.
 	 * @param args
+	 * Launch the application.
 	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
@@ -69,8 +69,8 @@ public class PassportNoGUI {
 		return frame;
 	}
 	/**
-	 * set frame
 	 * @param frame
+	 * set frame
 	 */
 	public void setFrame(JFrame frame) {
 		this.frame = frame;

@@ -81,9 +81,8 @@ public class LogInMenu extends JFrame {
 	}
 
 	/**
-	 * Launch the application window.
-	 * 
-	 * @param args
+	 * Launch the application window. 
+	 * @param args launch log in
 	 */
 	public static void main(String[] args) {
 		LogInMenu frame = new LogInMenu();
