@@ -42,15 +42,14 @@ public class DatabaseHandler extends javax.swing.JFrame {
 			// STEP 2 - Open a connection
 			conn = DriverManager.getConnection(DB_URL, USER_NAME, PASSWORD);
 			System.out.println("STEP 2 COMPLETE - Connection obtained...");
-			JOptionPane.showMessageDialog(null,"Connected to Database");
+			//JOptionPane.showMessageDialog(null,"Connected to Database");
 			// STEP 3 - Create Statement object
 			stmt = conn.createStatement();
-			System.out.println("STEP 3 COMPLETE - Statement object created...");
-		} catch (ClassNotFoundException e) {
-			System.out.print("Connection Error");
+			System.out.println("STEP 3 COMPLETE - Query executed.");
+		} catch (ClassNotFoundException e) {			
 			//JOptionPane.showMessageDialog(null,"Could not load driver.\n" + e.getMessage());
 		} catch (SQLException e) {
-			System.out.print("Connection Error");
+			//System.out.print("Connection Error");
 		}
 
 	}

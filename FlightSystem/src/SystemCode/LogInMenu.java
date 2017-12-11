@@ -59,7 +59,7 @@ public class LogInMenu extends JFrame {
 			@SuppressWarnings("deprecation")
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
 				try {
-					if (jtfUsername.getText().equals("root") && jtfPassword.getText().equals("password")) {
+					if (jtfUsername.getText().equals("group3") && jtfPassword.getText().equals("password")) {
 						// Opens MainMenu
 						FlightGUI window = new FlightGUI();
 						window.frame.setVisible(true);

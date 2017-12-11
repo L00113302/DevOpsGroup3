@@ -14,6 +14,8 @@ import java.awt.Desktop;
 import java.net.URI;
 import java.net.URI.*;
 import java.net.URL;
+import java.awt.Color;
+import java.awt.Font;
 
 public class PassportNoGUI {
 
@@ -30,6 +32,7 @@ public class PassportNoGUI {
 				try {
 					PassportNoGUI window = new PassportNoGUI();
 					window.getFrame().setVisible(true);
+				
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -49,28 +52,35 @@ public class PassportNoGUI {
 	 */
 	private void initialize() {
 		setFrame(new JFrame());
-		getFrame().setBounds(100, 100, 329, 211);
+		getFrame().setBounds(100, 100, 350, 242);
 		getFrame().setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		getFrame().getContentPane().setLayout(null);
 		
 		textField = new JTextField();
-		textField.setBounds(66, 67, 172, 20);
+		textField.setBounds(76, 82, 161, 20);
 		getFrame().getContentPane().add(textField);
 		textField.setColumns(10);
 		
 		
 		
-		JLabel lblPleaseEnterYour = new JLabel("Please Enter Your Passport Number");
-		lblPleaseEnterYour.setBounds(66, 28, 234, 14);
+		JLabel lblPleaseEnterYour = new JLabel("Enter Your Passport Number");
+		lblPleaseEnterYour.setBounds(76, 57, 225, 14);
 		getFrame().getContentPane().add(lblPleaseEnterYour);
 		
-		JButton btnNewButton = new JButton("Continue");
-		btnNewButton.setBounds(201, 126, 77, 23);
+		JButton btnNewButton = new JButton("Confirm Booking");
+		btnNewButton.setBounds(168, 169, 156, 23);
 		getFrame().getContentPane().add(btnNewButton);
 		
 		JButton btnSave = new JButton("OK");
-		btnSave.setBounds(115, 98, 77, 23);
+		btnSave.setBounds(126, 113, 77, 20);
 		frame.getContentPane().add(btnSave);
+		
+		JLabel lblGAirways = new JLabel("    G3 Airways");
+		lblGAirways.setForeground(Color.WHITE);
+		lblGAirways.setFont(new Font("Segoe UI Black", Font.BOLD | Font.ITALIC, 30));
+		lblGAirways.setBackground(Color.YELLOW);
+		lblGAirways.setBounds(26, 2, 286, 44);
+		frame.getContentPane().add(lblGAirways);
 		
 		btnSave.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -88,13 +98,14 @@ public class PassportNoGUI {
 					dbh.stmt.executeQuery("USE DevOps");
 					dbh.stmt.execute(insertQuery);
 
-					JOptionPane.showMessageDialog(null, "Query Executed");
+					//JOptionPane.showMessageDialog(null, "Query Executed");
 					// close connection
 					dbh.rs.close();
 					dbh.conn.close();
 
 				} catch (Exception ex) {
-					JOptionPane.showMessageDialog(null, ex.getMessage());
+					//System.out.print("Connection Error");
+					//JOptionPane.showMessageDialog(null, ex.getMessage());
 				}
 
 			}
@@ -124,6 +135,7 @@ public class PassportNoGUI {
 	 */
 	public void setFrame(JFrame frame) {
 		this.frame = frame;
+		frame.getContentPane().setBackground(Color.LIGHT_GRAY);
 	}
 	
 	public static void openWebpage(URI uri) {

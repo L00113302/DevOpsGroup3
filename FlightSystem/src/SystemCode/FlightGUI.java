@@ -17,7 +17,8 @@ import javax.swing.JButton;
 import java.awt.Color;
 import javax.swing.DefaultComboBoxModel;
 
-public class FlightGUI {
+@SuppressWarnings("serial")
+public class FlightGUI extends JFrame{
 
 	public JFrame frame;
 	public static JTextField textField;
@@ -36,6 +37,7 @@ public class FlightGUI {
 				try {
 					FlightGUI window1 = new FlightGUI();
 					window1.frame.setVisible(true);
+					
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -60,7 +62,7 @@ public class FlightGUI {
 		frame = new JFrame();
 		frame.getContentPane().setBackground(Color.LIGHT_GRAY);
 		frame.getContentPane().setForeground(Color.LIGHT_GRAY);
-		frame.setBounds(100, 100, 450, 300);
+		frame.setBounds(100, 100, 426, 300);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 
@@ -106,6 +108,8 @@ public class FlightGUI {
 		textField.setBounds(196, 172, 149, 23);
 		frame.getContentPane().add(textField);
 		textField.setColumns(10);
+		
+		
 
 		/**
 		 * Add action listeners to JComboBoxes
@@ -151,6 +155,8 @@ public class FlightGUI {
 					// Opens window
 					PassportNoGUI window = new PassportNoGUI();
 					window.getFrame().setVisible(true);
+					frame.setVisible(false);
+					//dispose();
 					DatabaseHandler dbh = new DatabaseHandler();
 					dbh.connectToDatabase();
 					dbh.stmt = dbh.conn.createStatement();
@@ -162,25 +168,30 @@ public class FlightGUI {
 					dbh.stmt.executeQuery("USE DevOps");
 					dbh.stmt.execute(insertQuery);
 
-					JOptionPane.showMessageDialog(null, "Query Executed");
+					//JOptionPane.showMessageDialog(null, "Query Executed");
 					// close connection
 					dbh.rs.close();
 					dbh.conn.close();
 
 				} catch (Exception ex) {
-					JOptionPane.showMessageDialog(null, ex.getMessage());
+					//System.out.print("Connection Error");
+					//JOptionPane.showMessageDialog(null, ex.getMessage());
 				}
 
 			}
 		});
+		
+		
+		
 
-		JLabel lblNewLabel = new JLabel("          G3 Airways");
-		lblNewLabel.setForeground(Color.RED);
+		JLabel lblNewLabel = new JLabel("G3 Airways");
+		lblNewLabel.setForeground(Color.WHITE);
 		lblNewLabel.setBackground(Color.YELLOW);
 		lblNewLabel.setFont(new Font("Segoe UI Black", Font.BOLD | Font.ITALIC, 30));
-		lblNewLabel.setBounds(31, 11, 374, 44);
+		lblNewLabel.setBounds(89, 11, 256, 44);
 		frame.getContentPane().add(lblNewLabel);
 
 	}
+	
 
 }// end class

@@ -55,9 +55,9 @@ public class HomeScreen {
 		frmGAirways.getContentPane().setLayout(null);
 
 		JLabel lblGAirways = new JLabel(" G3 Airways");
-		lblGAirways.setForeground(Color.RED);
+		lblGAirways.setForeground(Color.WHITE);
 		lblGAirways.setFont(new Font("Segoe UI Black", Font.BOLD | Font.ITALIC, 35));
-		lblGAirways.setBounds(33, 49, 291, 47);
+		lblGAirways.setBounds(10, 11, 291, 47);
 		frmGAirways.getContentPane().add(lblGAirways);
 
 		JPanel panel = new JPanel();
@@ -106,6 +106,7 @@ public class HomeScreen {
 					JFrame frame = new RegisterMenu();
 					frame.setVisible(true);
 					frame.setSize(220, 400);
+					frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
 				} catch (Exception ex) {
 					JOptionPane.showMessageDialog(null, ex.getMessage());
